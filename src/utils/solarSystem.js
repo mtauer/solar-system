@@ -17,11 +17,7 @@ const jd = solarSystem.getJulianDate();
 */
 
 export default class SolarSystem {
-  constructor() {
-
-  }
-
-  compute(date) {
+  compute() {
 
   }
 
