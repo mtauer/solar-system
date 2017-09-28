@@ -4,11 +4,12 @@ import { connect } from 'react-redux';
 
 class SolarSystemPage extends PureComponent {
   render() {
-    const { timestamp } = this.props;
+    const { timestamp, dateString } = this.props;
     return (
       <div>
         <h1>SolarSystemPage</h1>
         <p>Unix timestamp: {timestamp}</p>
+        <p>{dateString}</p>
       </div>
     );
   }
@@ -16,12 +17,18 @@ class SolarSystemPage extends PureComponent {
 
 const propTypes = {
   timestamp: PropTypes.number.isRequired,
+  dateString: PropTypes.string.isRequired,
 };
 SolarSystemPage.propTypes = propTypes;
 
-const mapStateToProps = state => ({
-  timestamp: state.solarSystem.timestamp,
-});
+const mapStateToProps = (state) => {
+  const { timestamp } = state.solarSystem;
+  const dateString = new Date(timestamp).toString();
+  return {
+    timestamp,
+    dateString,
+  };
+};
 
 const mapDispatchToProps = () => ({});
 
