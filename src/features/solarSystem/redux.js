@@ -33,9 +33,14 @@ export default function tasksOverviewReducer(state = initialState, action) {
 
 // Epics
 
-export function createUpdateTimestampEpic(timeScale = 1, scheduler) {
-  return () =>
-    Rx.Observable.timer(0, 1000 * timeScale, scheduler)
-      .map(() => Date.now())
-      .map(timestamp => setTimestamp(timestamp));
+// export function createUpdateTimestampEpic(timeScale = 1, scheduler) {
+//   return () =>
+//     Rx.Observable.timer(0, 1000 * timeScale, scheduler)
+//       .map(() => Date.now())
+//       .map(timestamp => setTimestamp(timestamp));
+// }
+
+export function createUpdateTimestampEpic() {
+  return () => Rx.Observable.of(Date.UTC(2000, 0, 1, 0, 0))
+    .map(timestamp => setTimestamp(timestamp));
 }
