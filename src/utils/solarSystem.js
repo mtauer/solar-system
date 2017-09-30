@@ -1,3 +1,4 @@
+import { dateToJulianDate } from './julianDate';
 
 /*
 
@@ -17,11 +18,12 @@ const jd = solarSystem.getJulianDate();
 */
 
 export default class SolarSystem {
-  compute() {
-
+  compute(date = Date.now(), options = { calendar: 'GREGORIAN_CALENDAR' }) {
+    this.date = date;
+    this.options = options;
   }
 
   getJulianDate() {
-    return 0.5;
+    return dateToJulianDate(this.date, this.options);
   }
 }
