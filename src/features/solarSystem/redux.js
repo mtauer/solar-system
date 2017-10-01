@@ -1,5 +1,21 @@
 import Rx from 'rxjs/Rx';
 
+/*
+
+State examples:
+
+state = {
+  startTimestamp,
+  endTimestamp,
+  visibleObjects: [
+    'Mars',
+    'Phobos',
+    'Deimos',
+  ],
+}
+
+*/
+
 // Initial State
 
 const initialState = {
