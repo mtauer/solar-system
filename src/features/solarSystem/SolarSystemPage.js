@@ -36,8 +36,8 @@ const mapStateToProps = (state) => {
   const { timestamp } = state.solarSystem;
   const dateString = new Date(timestamp).toString();
   const julianDate = dateToJulianDate(timestamp);
-  solarSystem.compute(timestamp);
-  const coordinates = solarSystem.getMarsEclipticCartesianCoordinates();
+  const mars = solarSystem.getMajorPlanet('Mars').compute(timestamp);
+  const coordinates = mars.getEclipticCartesianCoordinates();
   return {
     timestamp,
     dateString,

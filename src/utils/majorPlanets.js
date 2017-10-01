@@ -27,6 +27,7 @@ class MajorPlanet {
 
   compute(timestamp) {
     this.timestamp = timestamp;
+    return this;
   }
 
   getEclipticCartesianCoordinates() {
