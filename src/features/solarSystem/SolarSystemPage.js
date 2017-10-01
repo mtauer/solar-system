@@ -10,16 +10,16 @@ class SolarSystemPage extends PureComponent {
   render() {
     const { timestamp, dateString, julianDate, coordinates } = this.props;
     return (
-      <div>
+      <section className="page-wrapper">
         <h1>Solar System</h1>
         <p>Unix timestamp: {timestamp}</p>
         <p>{dateString} (Gregorian Calendar)</p>
         <p>Julian date: {julianDate}</p>
         <p>
-          Mars - heliocentric coordinates (in AU)
+          Mars, heliocentric coordinates (in AU)
           : {coordinates.x}, {coordinates.y}, {coordinates.z}
         </p>
-      </div>
+      </section>
     );
   }
 }
