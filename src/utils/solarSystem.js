@@ -6,16 +6,11 @@ import { dateToJulianDate } from './julianDate';
 
 Usage examples:
 
-const mars = solarSystem.getMars();
-mars.compute(Date.now());
-const coordinates = mars.getHeliocentricCartesianCoordinates();
-
-const solarSystem = new SolarSystem();
-solarSystem.compute(Date.now());
-const x = solarSystem.getMars().getCartesianCoordinates().x;
-
-const solarSystem = new SolarSystem(Date.now());
-const jd = solarSystem.getJulianDate();
+const mars = solarSystem.getObject('Mars');
+const marsCoordinates = timestamps.map(timestamp => {
+  mars.compute(timestamp);
+  return mars.getCartesianCoordinates();
+});
 
 */
 
