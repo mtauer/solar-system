@@ -14,7 +14,7 @@ class SolarSystemPage extends PureComponent {
     return (
       <section className="page-wrapper">
         <h1>Solar System</h1>
-        <p>Mars, heliocentric coordinates (in AU):</p>
+        <h6>Mars: Date, Julian Date, Heliocentric Coordinates (in AU):</h6>
         {marsPositionsArray.map(item => (
           <p key={item.timestamp}>
             {new Date(item.timestamp).toDateString()}, {dateToJulianDate(item.timestamp)}
